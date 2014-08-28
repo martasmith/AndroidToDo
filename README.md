@@ -7,3 +7,14 @@ Time spent: 15 hours spent in total
 
 Completed user stories:
 
+Required: User can add new items to the list - implemented
+Required: User can delete items from the list - implemented
+Required: User can edit items in the list - implemented
+Required: User's data presist after lelaunching application - implemented
+
+Notes:
+
+This is the initial submission and does not contain any optional added features. A final submission will follow in 24 hours.
+
+Most of the time spent with fixing issues and implementing workarounds related to Java 7 and Android 4.4W. Also, making the intent passing data back and forth btween the two activities took some time to perfect.
+
