@@ -3,7 +3,9 @@ AndroidToDo
 
 A simple Android App that lets the user add, modify, and delete items from a todo list.
 
-Time spent: 15 hours spent in total
+Time spent: 
+original feature set: 15 hours spent in total
+new feature set: 20 hours spent in total
 
 Completed user stories:
 
@@ -18,7 +20,7 @@ New feature updates:
 - SQLite data presistence
 - various UI updates, such as image representation of text data, added colors, long text truncation, etc..)
 
-Demo of new features
+
 ![LICEcapimage](https://github.com/martasmith/AndroidToDo/blob/master/todo_new_submission.gif)
 
 Notes:
