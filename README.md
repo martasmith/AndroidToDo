@@ -12,19 +12,7 @@ Required: User can delete items from the list - implemented
 Required: User can edit items in the list - implemented
 Required: User's data presist after lelaunching application - implemented
 
-Notes:
-
-This is the initial submission and does not contain any optional added features. A final submission will follow in 24 hours.
-
-Most of the time spent with fixing issues and implementing workarounds related to Java 7 and A
-
-
-ndroid 4.4W. Also, msaking the intent passing data back and forth btween the two activities took some time to perfect.
-
-![LICEcapimage](https://github.com/martasmith/AndroidToDo/blob/master/todo_submission.gif)
-
-
-New updates:
+New feature updates:
 - support for item priority
 - support for due dates
 - SQLite data presistence
@@ -32,3 +20,11 @@ New updates:
 
 Demo of new features
 ![LICEcapimage](https://github.com/martasmith/AndroidToDo/blob/master/todo_new_submission.gif)
+
+Notes:
+
+This is the initial submission and does not contain any optional added features. A final submission will follow in 24 hours.
+
+Most of the time spent with fixing issues and implementing workarounds related to Java 7 and A
+
+Android 4.4W. Also, msaking the intent passing data back and forth btween the two activities took some time to perfect.
