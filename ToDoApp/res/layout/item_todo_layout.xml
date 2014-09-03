@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/ic_high_desc"
+        android:src="@drawable/ic_high" />
+
+    <TextView
+        android:id="@+id/item_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/item_icon"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="12dp"
+        android:layout_toRightOf="@+id/item_icon"
+        android:layout_toLeftOf="@+id/item_date"
+        android:singleLine="true"
+        android:gravity="center_vertical"
+        android:text="@string/tv_item_desc"
+        android:textSize="15sp"
+        android:ellipsize="end" />
+
+    <TextView
+        android:id="@+id/item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/item_desc"
+        android:layout_alignBottom="@+id/item_desc"
+        android:layout_alignParentRight="true"
+        android:textColor="#FF7F27"
+        android:layout_marginRight="8dp"
+        android:text="@string/item_dateText"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

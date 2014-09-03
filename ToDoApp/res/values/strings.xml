@@ -5,9 +5,17 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="add_hint">Add a new item</string>
-    <string name="add_button_label">Add</string>
+    <string name="add_button_label">Add new item</string>
     <string name="title_activity_edit_item">EditItemActivity</string>
     <string name="textView_editItem">Edit Item Below</string>
-    <string name="btn_save">Save</string>
+    <string name="btn_save">Save item</string>
+    <string name="ic_high_desc">High priority</string>
+    <string name="tv_item_desc">Item displays here</string>
+    <string name="item_dateText">date</string>
+    <string name="title_activity_add_item">AddItemActivity</string>
+    <string name="priority_high">High priority</string>
+    <string name="priority_medium">Medium priority</string>
+    <string name="priority_low">Low priority</string>
+    <string name="btn_save_new">Save new item</string>
 
 </resources>
