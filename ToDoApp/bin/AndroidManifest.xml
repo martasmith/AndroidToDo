@@ -12,9 +12,9 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.Styles_todostyle" >
         <activity
-            android:name=".TodoActivity"
+            android:name=".activity.TodoActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +23,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EditItemActivity"
+            android:name=".activity.EditItemActivity"
             android:label="@string/title_activity_edit_item" >
         </activity>
         <activity
-            android:name=".AddEditItemActivity"
+            android:name=".activity.AddEditItemActivity"
             android:label="@string/title_activity_add_item" >
         </activity>
     </application>

@@ -3,9 +3,26 @@
     tools:context="com.example.todoapp.TodoActivity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_delete_checked"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:title="@string/action_delete_checked"/>
+    <item
+        android:id="@+id/action_sort_by_priority"
+        android:orderInCategory="200"
+        android:showAsAction="never"
+        android:title="@string/action_sort_by_priority"/>
+    <item
+        android:id="@+id/action_sort_by_duedate"
+        android:orderInCategory="300"
+        android:showAsAction="never"
+        android:title="@string/action_sort_by_duedate"/>
+    <item
+        android:id="@+id/itemAdd"
+        android:icon="@drawable/ic_action_add"
+        android:onClick="onAddItem"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_add">
+    </item>
 
 </menu>

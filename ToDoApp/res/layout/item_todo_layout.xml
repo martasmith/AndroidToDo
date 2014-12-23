@@ -1,43 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
+    android:descendantFocusability="blocksDescendants"
     android:layout_height="match_parent" >
 
     <ImageView
         android:id="@+id/item_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:scaleType="fitXY" 
+        android:layout_centerVertical="true"
         android:adjustViewBounds="true"
-        android:contentDescription="@string/ic_high_desc"
-        android:src="@drawable/ic_high" />
+        android:contentDescription="@string/ic_high_desc"/>
 
     <TextView
         android:id="@+id/item_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/item_icon"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="12dp"
+        android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/item_icon"
-        android:layout_toLeftOf="@+id/item_date"
-        android:singleLine="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="30dp"
+        android:ellipsize="end"
         android:gravity="center_vertical"
+        android:singleLine="true"
         android:text="@string/tv_item_desc"
-        android:textSize="15sp"
-        android:ellipsize="end" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/item_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/item_desc"
-        android:layout_alignBottom="@+id/item_desc"
-        android:layout_alignParentRight="true"
-        android:textColor="#FF7F27"
-        android:layout_marginRight="8dp"
+        android:layout_alignLeft="@+id/item_desc"
+        android:layout_below="@+id/item_desc"
         android:text="@string/item_dateText"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textSize="14sp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#999999" />
+
+    <CheckBox
+        android:id="@+id/taskDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|right"
+        android:onClick="markItemCompleted"
+        android:layout_alignParentRight="true"/>
 
 </RelativeLayout>
