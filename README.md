@@ -15,10 +15,13 @@ Required: User can edit items in the list - implemented
 Required: User's data presist after lelaunching application - implemented
 
 New feature updates:
-- support for item priority
-- support for due dates
-- SQLite data presistence
-- various UI updates, such as image representation of text data, added colors, long text truncation, etc..)
+- Persisting Todo items into SQLite instead of text file
+- Added support for completion due dates for todo items
+- Styled todo items in the list using a custom adapter
+- Added support for selecting priority for todo items (and display it in listview item)
+- Tweaked the style improving UI, (added with colors, and images, text truncation with ellipses)
+
+
 
 
 ![LICEcapimage](https://github.com/martasmith/AndroidToDo/blob/master/todo_new_submission.gif)
