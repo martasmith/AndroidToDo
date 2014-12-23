@@ -34,6 +34,7 @@ Time spent:
 
 
 *Screenshots*
+
 ![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen1.png)
 
 
