@@ -27,6 +27,7 @@ Time spent:
  - [x] pripority icons are programatically generated instead of static images
  - [x] items can be checked off the list
  - [x] impemented viewholder design pattern
+ - [x] added scrollview to all screens
  - [x] created options menu with the following new features:
    - [x] Delete checked items
    - [x] Sort items by priority
