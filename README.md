@@ -36,13 +36,8 @@ Time spent:
 *Screenshots*
 
 ![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen1.png)
+![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen2.png)
+![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen3.png)
+![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen4.png)
+![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen5.png)
 
-
-
-Notes:
-
-This is the initial submission and does not contain any optional added features. A final submission will follow in 24 hours.
-
-Most of the time spent with fixing issues and implementing workarounds related to Java 7 and A
-
-Android 4.4W. Also, msaking the intent passing data back and forth btween the two activities took some time to perfect.
