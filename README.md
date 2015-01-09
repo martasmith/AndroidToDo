@@ -33,12 +33,14 @@ Time spent:
    - [x] Sort items by priority
    - [x] Sort items by due date
 
+*Bugfixes*
+ - [x] Tasks are now correctly sortable by due date (1/6/2015)
 
 *Screenshots*
 
 ![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen1.png)
-![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen2.png)
-![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen3.png)
-![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen4.png)
-![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen5.png)
+![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen_options.png)
+![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen_add.png)
+![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen_edit.png)
+
 
