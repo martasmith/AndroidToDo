@@ -3,15 +3,20 @@
 <!-- Generated with http://android-holo-colors.com -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <style name="TodoTheme" parent="@style/_TodoTheme"/>
-  <style name="_TodoTheme" parent="android:Theme.Holo.Light">    
+    <style name="TodoTheme" parent="@style/_TodoTheme" />
 
-    <item name="android:checkboxStyle">@style/CheckBoxTodoTheme</item>
-
-    <item name="android:buttonStyle">@style/ButtonTodoTheme</item>
-
-    <item name="android:imageButtonStyle">@style/ImageButtonTodoTheme</item>
-
-  </style>
+    <style name="_TodoTheme" parent="android:Theme.Holo.Light">
+        <item name="android:checkboxStyle">@style/CheckBoxTodoTheme</item>
+        <item name="android:buttonStyle">@style/ButtonTodoTheme</item>
+        <item name="android:imageButtonStyle">@style/ImageButtonTodoTheme</item>
+        <item name="android:editTextBackground">@drawable/todotheme_edit_text_holo_light</item>
+        <item name="android:textColorHighlight">#99ffa07a</item>
+        <item name="android:textSelectHandleLeft">@drawable/todotheme_text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/todotheme_text_select_handle_right</item>
+        <item name="android:textSelectHandle">@drawable/todotheme_text_select_handle_middle</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/todotheme_btn_check_holo_light</item>
+        <item name="android:listChoiceIndicatorSingle">@drawable/todotheme_btn_radio_holo_light</item>
+        <item name="android:dropDownSpinnerStyle">@style/SpinnerTodoTheme</item>
+    </style>
 
 </resources>

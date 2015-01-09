@@ -14,7 +14,9 @@ public class Item {
     private int priority;
     private String iconLetter;
     private String description;
-    private String dueDate;
+    private int dueDay;
+    private int dueMonth;
+    private int dueYear;
     private int taskDone;
 
     // Constructors
@@ -22,14 +24,16 @@ public class Item {
         super();
     }
 
-    public Item(int priority, int iconColor, String iconLetter, String description, String dueDate,
-            int taskDone) {
+    public Item(int priority, int iconColor, String iconLetter, String description, int dueYear,
+            int dueMonth, int dueDay, int taskDone) {
         super();
         this.description = description;
         this.priority = priority;
         this.iconColor = iconColor;
         this.iconLetter = iconLetter;
-        this.dueDate = dueDate;
+        this.dueYear = dueYear;
+        this.dueMonth = dueMonth;
+        this.dueDay = dueDay;
         this.taskDone = taskDone;
     }
 
@@ -74,12 +78,28 @@ public class Item {
         this.description = description;
     }
 
-    public String getDueDate() {
-        return dueDate;
+    public int getDueYear() {
+        return dueYear;
     }
 
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
+    public void setDueYear(int dueYear) {
+        this.dueYear = dueYear;
+    }
+
+    public int getDueMonth() {
+        return dueMonth;
+    }
+
+    public void setDueMonth(int dueMonth) {
+        this.dueMonth = dueMonth;
+    }
+
+    public int getDueDay() {
+        return dueDay;
+    }
+
+    public void setDueDay(int dueDay) {
+        this.dueDay = dueDay;
     }
 
     public int getTaskDone() {

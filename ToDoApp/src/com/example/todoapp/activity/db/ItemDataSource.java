@@ -25,7 +25,9 @@ public class ItemDataSource {
         ItemDBOpenHelper.COLUMN_ICONCOLOR,
         ItemDBOpenHelper.COLUMN_ICONLETTER,
         ItemDBOpenHelper.COLUMN_DESCRIPTION,
-        ItemDBOpenHelper.COLUMN_DUEDATE,
+        ItemDBOpenHelper.COLUMN_DUEYEAR,
+        ItemDBOpenHelper.COLUMN_DUEMONTH,
+        ItemDBOpenHelper.COLUMN_DUEDAY,
         ItemDBOpenHelper.COLUMN_TASKDONE
     };
 
@@ -39,7 +41,9 @@ public class ItemDataSource {
         cv.put(ItemDBOpenHelper.COLUMN_ICONCOLOR, item.getIconColor());
         cv.put(ItemDBOpenHelper.COLUMN_ICONLETTER, item.getIconLetter());
         cv.put(ItemDBOpenHelper.COLUMN_DESCRIPTION, item.getDescription());
-        cv.put(ItemDBOpenHelper.COLUMN_DUEDATE, item.getDueDate());
+        cv.put(ItemDBOpenHelper.COLUMN_DUEYEAR, item.getDueYear());
+        cv.put(ItemDBOpenHelper.COLUMN_DUEMONTH, item.getDueMonth());
+        cv.put(ItemDBOpenHelper.COLUMN_DUEDAY, item.getDueDay());
         cv.put(ItemDBOpenHelper.COLUMN_TASKDONE, item.getTaskDone());
         long insertId = db.insert(ItemDBOpenHelper.TABLE_ITEMS, null, cv);
         item.setItemId(insertId);
@@ -51,9 +55,15 @@ public class ItemDataSource {
         List<Item> items = new ArrayList<Item>();
         String orderBy = "";
         if (prioritySort == 1) {
-            orderBy = ItemDBOpenHelper.COLUMN_PRIORITY + ", "+ ItemDBOpenHelper.COLUMN_DUEDATE;
+            orderBy = ItemDBOpenHelper.COLUMN_PRIORITY + ", "+
+                    ItemDBOpenHelper.COLUMN_DUEYEAR + ", " +
+                    ItemDBOpenHelper.COLUMN_DUEMONTH + ", " +
+                    ItemDBOpenHelper.COLUMN_DUEDAY;
         } else if (dateSort == 1) {
-            orderBy = ItemDBOpenHelper.COLUMN_DUEDATE + ", "+ ItemDBOpenHelper.COLUMN_PRIORITY;
+            orderBy = ItemDBOpenHelper.COLUMN_DUEYEAR + ", "+
+                    ItemDBOpenHelper.COLUMN_DUEMONTH + ", " +
+                    ItemDBOpenHelper.COLUMN_DUEDAY + ", " +
+                    ItemDBOpenHelper.COLUMN_PRIORITY;
         }
 
 
@@ -79,8 +89,12 @@ public class ItemDataSource {
                         .getColumnIndex(ItemDBOpenHelper.COLUMN_ICONLETTER)));
                 item.setDescription(cursor.getString(cursor
                         .getColumnIndex(ItemDBOpenHelper.COLUMN_DESCRIPTION)));
-                item.setDueDate(cursor.getString(cursor
-                        .getColumnIndex(ItemDBOpenHelper.COLUMN_DUEDATE)));
+                item.setDueYear(cursor.getInt(cursor
+                        .getColumnIndex(ItemDBOpenHelper.COLUMN_DUEYEAR)));
+                item.setDueMonth(cursor.getInt(cursor
+                        .getColumnIndex(ItemDBOpenHelper.COLUMN_DUEMONTH)));
+                item.setDueDay(cursor.getInt(cursor
+                        .getColumnIndex(ItemDBOpenHelper.COLUMN_DUEDAY)));
                 item.setTaskDone(cursor.getInt(cursor
                         .getColumnIndex(ItemDBOpenHelper.COLUMN_TASKDONE)));
                 items.add(item);
@@ -96,7 +110,9 @@ public class ItemDataSource {
         cv.put(ItemDBOpenHelper.COLUMN_ICONCOLOR, item.getIconColor());
         cv.put(ItemDBOpenHelper.COLUMN_ICONLETTER, item.getIconLetter());
         cv.put(ItemDBOpenHelper.COLUMN_DESCRIPTION, item.getDescription());
-        cv.put(ItemDBOpenHelper.COLUMN_DUEDATE, item.getDueDate());
+        cv.put(ItemDBOpenHelper.COLUMN_DUEYEAR, item.getDueYear());
+        cv.put(ItemDBOpenHelper.COLUMN_DUEMONTH, item.getDueMonth());
+        cv.put(ItemDBOpenHelper.COLUMN_DUEDAY, item.getDueDay());
         cv.put(ItemDBOpenHelper.COLUMN_TASKDONE, item.getTaskDone());
         db.update(ItemDBOpenHelper.TABLE_ITEMS, cv, whereClause, null);
         return item;

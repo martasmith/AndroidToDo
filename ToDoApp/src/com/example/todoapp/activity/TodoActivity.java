@@ -83,7 +83,9 @@ public class TodoActivity extends Activity {
                 currentItem = itemListAdapter.getItem(pos);
                 i.putExtra("descStr", currentItem.getDescription());
                 i.putExtra("priority", currentItem.getPriority());
-                i.putExtra("dueDateStr", currentItem.getDueDate());
+                i.putExtra("dueMonth", currentItem.getDueMonth());
+                i.putExtra("dueDay", currentItem.getDueDay());
+                i.putExtra("dueYear", currentItem.getDueYear());
                 i.putExtra("actionType", "edit");
                 i.putExtra("activityTitle", "Edit Current Item");
                 i.putExtra("itemPos", pos);
@@ -102,7 +104,9 @@ public class TodoActivity extends Activity {
             int priority = data.getExtras().getInt("priority", 0);
             int iconColor = data.getExtras().getInt("iconColor");
             String iconLetter = data.getExtras().getString("iconLetter");
-            String dueDateStr = data.getExtras().getString("dueDateStr");
+            int dueDay = data.getExtras().getInt("dueDay");
+            int dueMonth = data.getExtras().getInt("dueMonth");
+            int dueYear = data.getExtras().getInt("dueYear");
             int taskDone = 0;
 
             // Determine whether we need to add a new item or edit an existing one
@@ -114,7 +118,9 @@ public class TodoActivity extends Activity {
                 currentItem.setIconColor(iconColor);
                 currentItem.setIconLetter(iconLetter);
                 currentItem.setDescription(descStr);
-                currentItem.setDueDate(dueDateStr);
+                currentItem.setDueDay(dueDay);
+                currentItem.setDueMonth(dueMonth);
+                currentItem.setDueYear(dueYear);
                 // open db handle, and update item in database
                 itemDataSource.openDBHandle();
                 itemDataSource.updateItem(currentItem);
@@ -124,9 +130,9 @@ public class TodoActivity extends Activity {
                 Log.d("martas", " in add request code, item data: priority= " + priority
                         + " iconColor= "
                         + iconColor + " iconLetter= " + iconLetter + " descStr= " + descStr
-                        + " dueDateStr= " + dueDateStr);
+                        + " dueDay= " + dueDay + " dueMonth= " + dueMonth + " dueDay= " + dueDay);
                 // populate new item with data
-                newItem = new Item(priority, iconColor, iconLetter, descStr, dueDateStr, taskDone);
+                newItem = new Item(priority, iconColor, iconLetter, descStr, dueYear, dueMonth, dueDay, taskDone);
                 // open db handle, and insert data into database
                 itemDataSource.openDBHandle();
                 newItem = itemDataSource.insertItem(newItem);
@@ -162,12 +168,14 @@ public class TodoActivity extends Activity {
 
     public void deleteCheckedItems() {
 
+        //TODO: try only removing it from the adapter, and not from the list
         Iterator<Item> iterator = itemList.iterator();
         while (iterator.hasNext()) {
             Item thisItem = iterator.next();
             if (thisItem.getTaskDone() == 1) {
                 // remove the current element from the itemList
                 iterator.remove();
+                itemListAdapter.remove(thisItem);
             }
         }
 
@@ -177,7 +185,6 @@ public class TodoActivity extends Activity {
 
         // refresh adapter
         itemListAdapter.notifyDataSetChanged();
-
     }
 
     public void sortByPriority() {

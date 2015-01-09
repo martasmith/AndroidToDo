@@ -17,5 +17,10 @@
   <style name="ImageButtonTodoTheme" parent="android:Widget.ImageButton">
 	  <item name="android:background">@drawable/todotheme_btn_default_holo_light</item>
   </style>
+  
+  <style name="SpinnerTodoTheme" parent="android:Widget.Holo.Light.Spinner">
+      <item name="android:background">@drawable/todotheme_spinner_background_holo_light</item>
+      <item name="android:dropDownSelector">@drawable/todotheme_list_selector_holo_light</item>
+</style>
 
 </resources>

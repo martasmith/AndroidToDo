@@ -9,7 +9,7 @@ import android.util.Log;
 public class ItemDBOpenHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "items.db";
-    private static final int DATABASE_VERSION = 19;
+    private static final int DATABASE_VERSION = 20;
 
     // define table name and columns in the table
     public static final String TABLE_ITEMS = "items";
@@ -18,7 +18,9 @@ public class ItemDBOpenHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ICONCOLOR = "iconColor";
     public static final String COLUMN_ICONLETTER = "iconLetter";
     public static final String COLUMN_DESCRIPTION = "description";
-    public static final String COLUMN_DUEDATE = "dueDate";
+    public static final String COLUMN_DUEDAY = "dueDay";
+    public static final String COLUMN_DUEMONTH = "dueMonth";
+    public static final String COLUMN_DUEYEAR = "dueYear";
     public static final String COLUMN_TASKDONE = "taskDone";
 
     // table create statement
@@ -29,7 +31,9 @@ public class ItemDBOpenHelper extends SQLiteOpenHelper {
                     COLUMN_ICONCOLOR + " INTEGER, " +
                     COLUMN_ICONLETTER + " TEXT, " +
                     COLUMN_DESCRIPTION + " TEXT, " +
-                    COLUMN_DUEDATE + " TEXT, " +
+                    COLUMN_DUEYEAR + " INTEGER, " +
+                    COLUMN_DUEMONTH + " INTEGER, " +
+                    COLUMN_DUEDAY + " INTEGER, " +
                     COLUMN_TASKDONE + " INTEGER" + ")";
 
     public ItemDBOpenHelper(Context context) {

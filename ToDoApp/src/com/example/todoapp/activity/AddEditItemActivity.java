@@ -1,10 +1,13 @@
 
 package com.example.todoapp.activity;
 
+import java.util.Calendar;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -43,19 +46,20 @@ public class AddEditItemActivity extends Activity {
         dpDueDate = (DatePicker) findViewById(R.id.dpDueDate);
         btnSave = (Button) findViewById(R.id.btnSave);
 
+        priorityH.setTextColor(COLOR_RED);
+        priorityM.setTextColor(COLOR_ORANGE);
+        priorityL.setTextColor(COLOR_GREEN);
+
         // If the intention is edit item, get data elements from intent, and populate view with data
         actionType = getIntent().getStringExtra("actionType");
+        Log.d("martas", "actionType: " + actionType);
         if (actionType.equals("edit")) {
             String descStr = getIntent().getStringExtra("descStr");
             int priority = getIntent().getIntExtra("priority", 0);
-            String dueDateStr = getIntent().getStringExtra("dueDateStr");
+            int dueDay = getIntent().getIntExtra("dueDay", 0);
+            int dueMonth = getIntent().getIntExtra("dueMonth", 0);
+            int dueYear = getIntent().getIntExtra("dueYear", 0);
             itemPos = getIntent().getIntExtra("itemPos", -2);
-
-            // parse the date string to set the datepicker's value to the correct date
-            String[] dueDateArr = dueDateStr.split("-");
-            int month = Integer.parseInt(dueDateArr[0])-1;
-            int day = Integer.parseInt(dueDateArr[1]);
-            int year = Integer.parseInt(dueDateArr[2]);
 
             // convert iconId to it's respective radio button selection
             if (priority == 0) {
@@ -75,12 +79,25 @@ public class AddEditItemActivity extends Activity {
             }
 
             // populate rest of item data from intent
-            dpDueDate.updateDate(year, month, day);
+            dpDueDate.updateDate(dueYear, dueMonth-1, dueDay);
             etDescription.setText(descStr);
 
             // add some niceties
             etDescription.setSelection(descStr.length());
             etDescription.requestFocus();
+        } else {
+            // if add, set the DatePicker's date to the current date
+
+            Calendar cal = Calendar.getInstance();
+
+            int currentYear = cal.get(Calendar.YEAR);
+            int currentMonth = cal.get(Calendar.MONTH);
+            int currentDay = cal.get(Calendar.DAY_OF_MONTH);
+
+            //Log.d("martas","I'm in add clause, and the year is: " + currentYear + " the month is: " + currentMonth + " the day is: " + currentDay);
+
+            dpDueDate.updateDate(currentYear, currentMonth, currentDay);
+
         }
 
         String activityTitle = getIntent().getStringExtra("activityTitle");
@@ -114,13 +131,15 @@ public class AddEditItemActivity extends Activity {
                 }
 
                 // get the due date components
-                int month = dpDueDate.getMonth();
+                int month = dpDueDate.getMonth()+1;
                 int day = dpDueDate.getDayOfMonth();
                 int year = dpDueDate.getYear();
 
                 // Construct due date string
-                String dueDate = String.valueOf(month+1) + "-" + String.valueOf(day) + "-"
+                String dueDate = String.valueOf(month) + "-" + String.valueOf(day) + "-"
                         + String.valueOf(year);
+
+
 
                 // Set up intent to send data to ToDo Activity
                 i = new Intent(AddEditItemActivity.this, TodoActivity.class);
@@ -128,7 +147,10 @@ public class AddEditItemActivity extends Activity {
                 i.putExtra("priority", priority);
                 i.putExtra("iconColor", color);
                 i.putExtra("iconLetter", letter);
-                i.putExtra("dueDateStr", dueDate);
+                i.putExtra("dueDate", dueDate);
+                i.putExtra("dueYear", year);
+                i.putExtra("dueMonth", month);
+                i.putExtra("dueDay", day);
                 // pass back whether intention of page is add or edit, as onActivityResult behavior
                 // will differ based on it.
                 i.putExtra("itemPos", itemPos);

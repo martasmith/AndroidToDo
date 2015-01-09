@@ -57,7 +57,8 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
         la = new LetterAvatar(context, currentItem.getIconColor(), currentItem.getIconLetter(), 20);
         viewHolder.ivPlaceHolder.setImageDrawable(la);
         viewHolder.itemDesc.setText(currentItem.getDescription());
-        viewHolder.itemDate.setText("Due: " + currentItem.getDueDate());
+        String dueDate = currentItem.getDueMonth() + "-" + currentItem.getDueDay() + "-" + currentItem.getDueYear();
+        viewHolder.itemDate.setText("Due: " + dueDate);
         viewHolder.taskDone.setTag(position);
 
         if (currentItem.getTaskDone() == 1) {
