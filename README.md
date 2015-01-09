@@ -36,6 +36,11 @@ Time spent:
 *Bugfixes*
  - [x] Tasks are now correctly sortable by due date (1/6/2015)
 
+*Demo*
+
+![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_demo.gif)
+
+
 *Screenshots*
 
 ![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen1.png)
@@ -43,6 +48,3 @@ Time spent:
 ![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen_add.png)
 ![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen_edit.png)
 
-*Demo*
-
-![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_demo.gif)
