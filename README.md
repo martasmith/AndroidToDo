@@ -43,4 +43,6 @@ Time spent:
 ![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen_add.png)
 ![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_screen_edit.png)
 
+*Demo*
 
+![image](https://github.com/martasmith/AndroidToDo/blob/master/todo_demo.gif)
