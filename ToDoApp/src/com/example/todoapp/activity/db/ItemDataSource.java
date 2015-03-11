@@ -66,7 +66,6 @@ public class ItemDataSource {
                     ItemDBOpenHelper.COLUMN_PRIORITY;
         }
 
-
         String qry = SQLiteQueryBuilder.buildQueryString(false, ItemDBOpenHelper.TABLE_ITEMS, dbColumns,
                 null, null, null, orderBy, null);
 
@@ -119,6 +118,7 @@ public class ItemDataSource {
     }
 
     public void deleteItem(Item item) {
+        Log.d("martas", "deleteItem is being called!");
         String whereClause = ItemDBOpenHelper.COLUMN_ITEMID + "=" + item.getItemId();
         db.delete(ItemDBOpenHelper.TABLE_ITEMS, whereClause, null);
     }

@@ -17,7 +17,7 @@
      limitations under the License.
 -->
 
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="Theme.Styles_todostyle" parent="@style/TodoTheme">
         <item name="android:actionBarItemBackground">@drawable/selectable_background_styles_todostyle</item>
@@ -29,12 +29,11 @@
         <item name="android:actionModeBackground">@drawable/cab_background_top_styles_todostyle</item>
         <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_styles_todostyle</item>
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Styles_todostyle</item>
-        
-        
+            
     </style>
 
     <style name="ActionBar.Solid.Styles_todostyle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
-        <item name="android:background">@drawable/ab_solid_styles_todostyle</item>
+        <item name="android:background">@color/todotheme_color</item>
         <item name="android:backgroundStacked">@drawable/ab_stacked_solid_styles_todostyle</item>
         <item name="android:backgroundSplit">@drawable/ab_bottom_solid_styles_todostyle</item>
         <item name="android:progressBarStyle">@style/ProgressBar.Styles_todostyle</item>

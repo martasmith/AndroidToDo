@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -101,7 +102,8 @@ public class AddEditItemActivity extends Activity {
         }
 
         String activityTitle = getIntent().getStringExtra("activityTitle");
-        this.setTitle(activityTitle);
+        //this.setTitle(activityTitle);
+        this.setTitle(Html.fromHtml("&nbsp;<b><font color=\"#FAE2C0\">"+ activityTitle + "</b>"));
 
         // Call listeners
         setupSaveBtnListener();

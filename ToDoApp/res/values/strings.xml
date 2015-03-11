@@ -6,8 +6,9 @@
     <string name="action_settings">Settings</string>
     <string name="action_add">Add</string>
     <string name="action_delete_checked">Delete checked items</string>
-    <string name="action_sort_by_priority">Sort by Priority</string>
-    <string name="action_sort_by_duedate">Sort by Due date</string>
+    <string name="action_sort_by_priority">Sort by priority</string>
+    <string name="action_sort_by_duedate">Sort by due date</string>
+    <string name="action_sort_by_original">Reset sorting</string>
     <string name="add_hint">Item name</string>
     <string name="add_button_label">Add new item</string>
     <string name="title_activity_edit_item">EditItemActivity</string>

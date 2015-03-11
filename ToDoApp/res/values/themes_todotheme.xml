@@ -17,6 +17,13 @@
         <item name="android:listChoiceIndicatorMultiple">@drawable/todotheme_btn_check_holo_light</item>
         <item name="android:listChoiceIndicatorSingle">@drawable/todotheme_btn_radio_holo_light</item>
         <item name="android:dropDownSpinnerStyle">@style/SpinnerTodoTheme</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+    
+    <!-- ActionBar styles -->
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/todotheme_color</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 
 </resources>

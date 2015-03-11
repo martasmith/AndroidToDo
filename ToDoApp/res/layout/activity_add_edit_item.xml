@@ -1,77 +1,72 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/aaItem"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" >
-   
 
-    <ScrollView
-        android:id="@+id/aaItem"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/btnSave" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context="com.example.todoapp.activity.AddEditItemActivity" >
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/etDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp"
-            tools:context="com.example.todoapp.activity.AddEditItemActivity" >
+            android:ellipsize="start"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/add_hint" />
 
-            <EditText
-                android:id="@+id/etDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:ellipsize="start"
-                android:gravity="center_horizontal"
-                android:hint="@string/add_hint" />
+        <RadioGroup
+            android:id="@+id/rgPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp" >
 
-            <RadioGroup
-                android:id="@+id/rgPriority"
+            <RadioButton
+                android:id="@+id/rbHigh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp" >
+                android:checked="true"
+                android:text="@string/priority_high" />
 
-                <RadioButton
-                    android:id="@+id/rbHigh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/priority_high" />
-
-                <RadioButton
-                    android:id="@+id/rbMedium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/priority_medium" />
-
-                <RadioButton
-                    android:id="@+id/rbLow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/priority_low" />
-            </RadioGroup>
-
-            <DatePicker
-                android:id="@+id/dpDueDate"
+            <RadioButton
+                android:id="@+id/rbMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:calendarViewShown="false" />
-        </LinearLayout>
-    </ScrollView>
+                android:text="@string/priority_medium" />
 
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/btn_save" />
+            <RadioButton
+                android:id="@+id/rbLow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/priority_low" />
+        </RadioGroup>
 
-</RelativeLayout>
+        <DatePicker
+            android:id="@+id/dpDueDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:calendarViewShown="false" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/todotheme_action_text"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:text="@string/btn_save" />
+    </LinearLayout>
+
+</ScrollView>

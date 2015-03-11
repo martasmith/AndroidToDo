@@ -11,6 +11,7 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int todotheme_action_text=0x7f040001;
         public static final int todotheme_color=0x7f040000;
     }
     public static final class dimen {
@@ -121,19 +122,20 @@ public final class R {
         public static final int action_delete_checked=0x7f09000e;
         public static final int action_settings=0x7f09000d;
         public static final int action_sort_by_duedate=0x7f090010;
+        public static final int action_sort_by_original=0x7f090011;
         public static final int action_sort_by_priority=0x7f09000f;
-        public static final int btnSave=0x7f090001;
-        public static final int dpDueDate=0x7f090007;
-        public static final int etDescription=0x7f090002;
-        public static final int itemAdd=0x7f090011;
+        public static final int btnSave=0x7f090007;
+        public static final int dpDueDate=0x7f090006;
+        public static final int etDescription=0x7f090001;
+        public static final int itemAdd=0x7f090012;
         public static final int item_date=0x7f09000b;
         public static final int item_desc=0x7f09000a;
         public static final int item_icon=0x7f090009;
         public static final int lvItems=0x7f090008;
-        public static final int rbHigh=0x7f090004;
-        public static final int rbLow=0x7f090006;
-        public static final int rbMedium=0x7f090005;
-        public static final int rgPriority=0x7f090003;
+        public static final int rbHigh=0x7f090003;
+        public static final int rbLow=0x7f090005;
+        public static final int rbMedium=0x7f090004;
+        public static final int rgPriority=0x7f090002;
         public static final int taskDone=0x7f09000c;
     }
     public static final class layout {
@@ -151,22 +153,23 @@ public final class R {
         public static final int action_delete_checked=0x7f060004;
         public static final int action_settings=0x7f060002;
         public static final int action_sort_by_duedate=0x7f060006;
+        public static final int action_sort_by_original=0x7f060007;
         public static final int action_sort_by_priority=0x7f060005;
-        public static final int add_button_label=0x7f060008;
-        public static final int add_hint=0x7f060007;
+        public static final int add_button_label=0x7f060009;
+        public static final int add_hint=0x7f060008;
         public static final int app_name=0x7f060000;
-        public static final int btn_save=0x7f06000b;
-        public static final int btn_save_new=0x7f060013;
+        public static final int btn_save=0x7f06000c;
+        public static final int btn_save_new=0x7f060014;
         public static final int hello_world=0x7f060001;
-        public static final int ic_high_desc=0x7f06000c;
-        public static final int item_dateText=0x7f06000e;
-        public static final int priority_high=0x7f060010;
-        public static final int priority_low=0x7f060012;
-        public static final int priority_medium=0x7f060011;
-        public static final int textView_editItem=0x7f06000a;
-        public static final int title_activity_add_item=0x7f06000f;
-        public static final int title_activity_edit_item=0x7f060009;
-        public static final int tv_item_desc=0x7f06000d;
+        public static final int ic_high_desc=0x7f06000d;
+        public static final int item_dateText=0x7f06000f;
+        public static final int priority_high=0x7f060011;
+        public static final int priority_low=0x7f060013;
+        public static final int priority_medium=0x7f060012;
+        public static final int textView_editItem=0x7f06000b;
+        public static final int title_activity_add_item=0x7f060010;
+        public static final int title_activity_edit_item=0x7f06000a;
+        public static final int tv_item_desc=0x7f06000e;
     }
     public static final class style {
         public static final int ActionBar_Solid_Styles_todostyle=0x7f070003;
@@ -204,6 +207,9 @@ public final class R {
         public static final int DropDownListView_Styles_todostyle=0x7f070006;
         public static final int DropDownNav_Styles_todostyle=0x7f070008;
         public static final int ImageButtonTodoTheme=0x7f07000e;
+        /**  ActionBar styles 
+         */
+        public static final int MyActionBar=0x7f070012;
         public static final int PopupMenu_Styles_todostyle=0x7f070005;
         public static final int ProgressBar_Styles_todostyle=0x7f070009;
         public static final int SpinnerTodoTheme=0x7f07000f;

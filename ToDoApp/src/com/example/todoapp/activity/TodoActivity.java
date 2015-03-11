@@ -8,6 +8,7 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -45,7 +46,9 @@ public class TodoActivity extends Activity {
         itemDataSource = new ItemDataSource(this);
         itemList = new ArrayList<Item>();
         itemDataSource.openDBHandle();
-        itemList = itemDataSource.fetchAllItems(0,0);
+        itemList = itemDataSource.fetchAllItems(0, 0);
+
+        getActionBar().setTitle(Html.fromHtml("&nbsp;<b><font color=\"#FAE2C0\">My To-Do List</font></b>"));
 
         polulateCustomListView();
         setupListViewListener();
@@ -64,12 +67,11 @@ public class TodoActivity extends Activity {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapter, View item, int pos, long id) {
                 currentItem = itemListAdapter.getItem(pos);
-                itemList.remove(currentItem);
-                // also remove it from the db
+                // remove it from the db
                 itemDataSource.openDBHandle();
                 itemDataSource.deleteItem(currentItem);
-                // notify adapter to refresh data
-                itemListAdapter.notifyDataSetChanged();
+                // remove it from the list via the adapter
+                itemListAdapter.remove(currentItem);
                 return true;
             }
         });
@@ -132,7 +134,8 @@ public class TodoActivity extends Activity {
                         + iconColor + " iconLetter= " + iconLetter + " descStr= " + descStr
                         + " dueDay= " + dueDay + " dueMonth= " + dueMonth + " dueDay= " + dueDay);
                 // populate new item with data
-                newItem = new Item(priority, iconColor, iconLetter, descStr, dueYear, dueMonth, dueDay, taskDone);
+                newItem = new Item(priority, iconColor, iconLetter, descStr, dueYear, dueMonth,
+                        dueDay, taskDone);
                 // open db handle, and insert data into database
                 itemDataSource.openDBHandle();
                 newItem = itemDataSource.insertItem(newItem);
@@ -153,7 +156,7 @@ public class TodoActivity extends Activity {
     public void markItemCompleted(View v) {
         taskDone = (CheckBox) v;
         int rowId = (Integer) v.getTag();
-        //checkedItems.add(rowId);
+        // checkedItems.add(rowId);
         currentItem = itemListAdapter.getItem(rowId);
         if (taskDone.isChecked()) {
             currentItem.setTaskDone(1);
@@ -168,7 +171,7 @@ public class TodoActivity extends Activity {
 
     public void deleteCheckedItems() {
 
-        //TODO: try only removing it from the adapter, and not from the list
+        // TODO: try only removing it from the adapter, and not from the list
         Iterator<Item> iterator = itemList.iterator();
         while (iterator.hasNext()) {
             Item thisItem = iterator.next();
@@ -179,7 +182,7 @@ public class TodoActivity extends Activity {
             }
         }
 
-        //remove items from the DB
+        // remove items from the DB
         itemDataSource.openDBHandle();
         itemDataSource.deleteAllChecked();
 
@@ -188,18 +191,26 @@ public class TodoActivity extends Activity {
     }
 
     public void sortByPriority() {
-        //clear array, re-populate it, refresh view
+        // clear array, re-populate it, refresh view
         itemListAdapter.clear();
         itemDataSource.openDBHandle();
-        itemList = itemDataSource.fetchAllItems(1,0);
+        itemList = itemDataSource.fetchAllItems(1, 0);
         itemListAdapter.addAll(itemList);
     }
 
     public void sortByDate() {
-        //clear array, re-populate it, refresh view
+        // clear array, re-populate it, refresh view
         itemListAdapter.clear();
         itemDataSource.openDBHandle();
-        itemList = itemDataSource.fetchAllItems(0,1);
+        itemList = itemDataSource.fetchAllItems(0, 1);
+        itemListAdapter.addAll(itemList);
+    }
+
+    public void sortByOriginal() {
+        // clear array, re-populate it, refresh view
+        itemListAdapter.clear();
+        itemDataSource.openDBHandle();
+        itemList = itemDataSource.fetchAllItems(0,0);
         itemListAdapter.addAll(itemList);
     }
 
@@ -224,6 +235,9 @@ public class TodoActivity extends Activity {
             return true;
         } else if (id == R.id.action_sort_by_duedate) {
             sortByDate();
+            return true;
+        } else if (id == R.id.action_sort_by_original) {
+            sortByOriginal();
             return true;
         }
 
